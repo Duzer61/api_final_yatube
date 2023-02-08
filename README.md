@@ -27,8 +27,10 @@ API реализован на Django Rest Framework. API предоставля�
  - GET запрос к списку постов: `/api/v1/posts/`
  - POST запрос для публикации нового поста: `/api/v1/posts/`
 	`{
-"text": "string", /n
-"image": "string", /n
+"text": "string",
+
+"image": "string",
+
 "group": 1
 }`
 
