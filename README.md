@@ -9,9 +9,9 @@ API реализован на Django Rest Framework. API предоставля�
 
 
 ### Технологии
-Python 3.9
-Django==3.2.16
-Django Rest Framework
+- Python 3.9
+- Django==3.2.16
+- Django Rest Framework
 
 
 ## Установка проекта из репозитория (описание для Windows)
@@ -26,11 +26,20 @@ Django Rest Framework
 ## Примеры запросов к API:
  - GET запрос к списку постов: `/api/v1/posts/`
  - POST запрос для публикации нового поста: `/api/v1/posts/`
-	`{
-"text": "string",
-"image": "string",
-"group": 1
-}`
+
+    {
+    	"text": "string",
+    	"image": "string",
+    	"group": 1
+    }
+ - POST запрос для создания комментария: `/api/v1/posts/{post_id}/comments/`
+    {
+    	"text": "string"
+    }
+ - PATCH запрос для редактирования комментария: `/api/v1/posts/{post_id}/comments/{id}/`
+	 {
+	 	"text": "string"
+	 }
 
 ### Автор
 Данил Кочетов - [GitHub](https://github.com/Duzer61)
