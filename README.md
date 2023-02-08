@@ -9,9 +9,9 @@ API реализован на Django Rest Framework. API предоставля�
 
 
 ### Технологии
-Python 3.9
-Django==3.2.16
-Django Rest Framework
+- Python 3.9
+- Django==3.2.16
+- Django Rest Framework
 
 
 ## Установка проекта из репозитория (описание для Windows)
