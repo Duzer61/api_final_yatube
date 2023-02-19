@@ -1,4 +1,4 @@
-from posts.models import Comment, Follow, Group, Post, User
+from posts.models import Comment, Follow, Group, Post
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 
@@ -30,14 +30,14 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class FollowSerializer(serializers.ModelSerializer):
     user = serializers.SlugRelatedField(
-        queryset=User.objects.all(),
+        read_only=True,
         default=serializers.CurrentUserDefault(),
         slug_field='username'
     )
 
     def validate(self, data):
         """Проверка что юзер не подписывается сам на себя"""
-        if data['user'] == data['following']:
+        if self.context['request'].user == data['following']:
             raise serializers.ValidationError(
                 'Нельзя подписываться на самого себя.'
             )
